@@ -3,7 +3,8 @@ const tableHeaders = [
 ]
 const catergories = [
     "cateory1",
-    "cateory2"
+    "cateory2",
+    "cateory3",
 ]
 
 function generateTableHead(table) {
