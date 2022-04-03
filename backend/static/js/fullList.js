@@ -171,7 +171,13 @@ function generateTableHead(table) {
 }
 
 function generateTableRows(table) {
-    for (let category of catergories) {
+    // Shuffle array
+    const shuffled = catergories.sort(() => 0.5 - Math.random());
+
+    // Get sub-array of first n elements after shuffled
+    let selected = shuffled.slice(0, 12);
+
+    for (let category of selected) {
         let row = table.insertRow();
         let text = document.createTextNode(category)
         row.appendChild(text)
@@ -179,5 +185,5 @@ function generateTableRows(table) {
 }
 
 let table = document.querySelector("table");
-generateTableHead(table);
+//generateTableHead(table);
 generateTableRows(table);
