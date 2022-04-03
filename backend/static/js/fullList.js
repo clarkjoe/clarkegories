@@ -2,6 +2,7 @@ const tableHeaders = [
     "Category"
 ]
 const catergories = [
+//List 1
     "A Boy's Name",
     "U.S. City",
     "Thing That Is Cold",
@@ -14,7 +15,7 @@ const catergories = [
     "Thing Found In The Ocean",
     "President",
     "Product Name",
-
+//List 2
     "Famous Female",
     "Medicine/Drug",
     "Thing Made Of Metal",
@@ -27,7 +28,7 @@ const catergories = [
     "Junk Food",
     "Thing That Grows",
     "Company",
-
+//List 3
     "Aritcle Of Clothing",
     "Dessert",
     "Car Part",
@@ -40,7 +41,7 @@ const catergories = [
     "Thing At The Beach",
     "Color",
     "Tool",
-
+//List 4
     "Hero",
     "Gift/Present",
     "Term Of Endearment",
@@ -53,7 +54,7 @@ const catergories = [
     "Thing In A Souvenir Shop",
     "Item In Your Purse/Wallet",
     "World Record",
-
+//List 5
     "Sandwich",
     "Item In A Catalog",
     "World Leader/Politician",
@@ -66,7 +67,7 @@ const catergories = [
     "Foreign City",
     "Stone/Gem",
     "Musical Instrument",
-
+//List 6
     "Nickname",
     "Thing In The Sky",
     "Pizza Topping",
@@ -79,7 +80,7 @@ const catergories = [
     "Term Of Measurement",
     "Item In This Room",
     "Book Title",
-
+//List 7
     "Fictional Character",
     "Menu Item",
     "Magazine",
@@ -92,7 +93,7 @@ const catergories = [
     "Thing With A Tail",
     "Sports Equipment",
     "Crime",
-
+//List 8
     "Thing That Is Sticky",
     "Award/Ceremony",
     "Car",
@@ -105,7 +106,7 @@ const catergories = [
     "Park",
     "Leisure Activity",
     "Thing You're Allergic To",
-
+//List 9
     "Restaurant",
     "Notorious Person",
     "Fruit",
@@ -118,7 +119,7 @@ const catergories = [
     "Weapon",
     "Thing That Is Round",
     "Word Associated With Exercise",
-
+//List 10
     "Sport",
     "Song Title",
     "Part Of The Body",
@@ -131,7 +132,7 @@ const catergories = [
     "Villian/Monster",
     "Flower",
     "Thing You Replace",
-
+//List 11
     "Baby Food",
     "Famous Duo and Trio",
     "Thing Found At A Desk",
@@ -144,7 +145,7 @@ const catergories = [
     "Thing That You Wear",
     "Beer",
     "Thing At A Circus",
-
+//List 12
     "Vegetable",
     "State",
     "Thing You Throw Away",
@@ -157,6 +158,9 @@ const catergories = [
     "Thing Found At A Football Game",
     "Tree",
     "Personality Trait",
+//Addded
+    "Something Squishy",
+    "Something With A Strong Smell"
 ]
 
 function generateTableHead(table) {
@@ -177,9 +181,14 @@ function generateTableRows(table) {
     // Get sub-array of first n elements after shuffled
     let selected = shuffled.slice(0, 12);
 
-    for (let category of selected) {
+    for (let index in selected) {
         let row = table.insertRow();
-        let text = document.createTextNode(category)
+        if (parseInt(index) < 9) {
+            s = "\xa0" + (parseInt(index)+1) + ". " + selected[index]
+        } else {
+            s = parseInt(index)+1 + ". " + selected[index]
+        }
+        let text = document.createTextNode(s)
         row.appendChild(text)
     }
 }
